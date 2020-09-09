@@ -57,6 +57,7 @@ const handleNoteSave = function () {
   };
 
   saveNote(newNote).then(() => {
+    console.log("here")
     getAndRenderNotes();
     renderActiveNote();
   });
@@ -137,7 +138,9 @@ const renderNoteList = (notes) => {
 
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => {
+ 
   return getNotes().then(renderNoteList);
+
 };
 
 $saveNoteBtn.on("click", handleNoteSave);
